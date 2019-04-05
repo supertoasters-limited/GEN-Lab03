@@ -10,4 +10,5 @@ public class Tests {
         assertEquals(bruno.getName(), "Bruno");
         assertNotEquals(new Piece("Florian").getName(), "Caroline");
     }
+
 }
