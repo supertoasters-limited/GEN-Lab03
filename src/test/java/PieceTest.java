@@ -9,13 +9,13 @@ public class PieceTest {
         Piece red = new Piece("Red", jail);
 
         assertEquals(red.getName(), "Red");
-        assertEquals(red.getLocation(), "Jail");
+        assertEquals(red.getLocation().getName(), "Jail");
 
         Square bank = new Square("Bank");
         red.setName("Pink");
         red.setLocation(bank);
 
         assertEquals(red.getName(), "Pink");
-        assertEquals(red.getLocation(), bank);
+        assertEquals(red.getLocation().getName(), "Bank");
     }
 }
