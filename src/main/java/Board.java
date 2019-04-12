@@ -1,11 +1,12 @@
 public class Board {
 
-    final public static int nbSquare = 40;
+    final public static int NB_SQUARE = 40;
+    final public static int GO_SQUARE = 0;
     private Square[] allSquares = new Square[40];
 
     public Board(){
-        for(int i = 0; i < nbSquare; i++){
-            if(i == 0){
+        for(int i = 0; i < NB_SQUARE; i++){
+            if(i == GO_SQUARE){
                 allSquares[i] = new Square("Go");
             }
             else {
@@ -20,9 +21,9 @@ public class Board {
 
     public Square getSquare(Square location, int offset){
         Square result = new Square("Error");
-        for(int i = 0; i < nbSquare; i++){
+        for(int i = 0; i < NB_SQUARE; i++){
             if(allSquares[i] == location){
-                result = allSquares[(i+offset) % nbSquare];
+                result = allSquares[(i+offset) % NB_SQUARE];
                 break;
             }
         }
