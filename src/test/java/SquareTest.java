@@ -6,15 +6,16 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SquareTest {
     @Test
     public void aSquareShouldhaveAName(){
-        Square square = new Square("ASuperSquare");
-        assertNotNull(square);
+        String squareName = "ASuperSquare";
+        Square square = new Square(squareName);
+        assertNotNull(squareName);
         assertNotNull(square.getName());
     }
 
     @Test
     public void aSquareShouldHaveCorrectName(){
-        final String SQUARE_NAME = "JAIL";
-        Square square = new Square(SQUARE_NAME);
-        assertEquals(square.getName(), SQUARE_NAME);
+        String squareName = "JAIL";
+        Square square = new Square(squareName);
+        assertEquals(square.getName(), squareName);
     }
 }
