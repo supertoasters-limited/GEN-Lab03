@@ -15,11 +15,7 @@ public class Board {
         }
     }
 
-    public Square[] getAllSquares() {
-        return allSquares.clone();
-    }
-
-    public Square getSquare(Square location, int offset){
+    public Square getSquare(Square location, int offset) {
         Square result = new Square("Error");
         for(int i = 0; i < NB_SQUARE; i++){
             if(allSquares[i] == location){
@@ -28,5 +24,9 @@ public class Board {
             }
         }
         return result;
+    }
+
+    public Square[] getAllSquares() {
+        return allSquares.clone();
     }
 }
