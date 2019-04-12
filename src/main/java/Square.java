@@ -7,14 +7,10 @@ public class Square {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String toString(){
-        return getName();
+    public String toString() {
+        return this.getName();
     }
 }

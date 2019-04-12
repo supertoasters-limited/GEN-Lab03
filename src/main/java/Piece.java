@@ -1,4 +1,5 @@
 public class Piece {
+
     private String name;
     private Square location;
 
