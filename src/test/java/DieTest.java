@@ -5,7 +5,7 @@ public class DieTest {
     @RepeatedTest(20)
     void testRollDie(){
         Die myDie = new Die();
-        assertTrue(myDie.getFaceValue() <= Die.MAX && myDie.getFaceValue() >= Die.MIN);
+        assertTrue(myDie.getFaceValue() <= Die.MAX);
+        assertTrue( myDie.getFaceValue() >= Die.MIN);
     }
-
 }
