@@ -1,24 +1,36 @@
 public class Player {
+
     private String name;
     private Piece playerPiece;
-    public void takeTurn(Die[] dice, Board board){
-        int sum = 0;
-        for(int i = 0; i < dice.length; i++){
-            dice[i].roll();
-            sum += dice[i].getFaceValue();
-        }
+    private Die[] dice;
+    private Board board;
 
-        System.out.println("Player " + this + ": " + sum);
-        Square oldLoc = playerPiece.getLocation();
-        Square newLoc = board.getSquare(oldLoc, sum);
-        playerPiece.setLocation(newLoc);
-        System.out.println("Player " + this + ": " + newLoc);
+    public Player(Board board, Die[] dice, String name) {
+        this.board = board;
+        this.dice = dice;
+        this.name = name;
 
+        this.playerPiece = new Piece(name, this.board.getAllSquares()[0]);
     }
 
-    public Player(Square pieceLocation, String name){
-        this.name = name;
-        this.playerPiece = new Piece(name, pieceLocation);
+    public void takeTurn() {
+        int fvTot = 0;
+
+        /* Roll the dice and save the result */
+        for(int i = 0; i < dice.length; i++){
+            dice[i].roll();
+            fvTot += dice[i].getFaceValue();
+        }
+
+        /* Display player and roll value */
+        System.out.println(this + " rolled " + fvTot);
+        Square oldLoc = playerPiece.getLocation();
+
+        /* Display player and new location */
+        Square newLoc = board.getSquare(oldLoc, fvTot);
+        playerPiece.setLocation(newLoc);
+        System.out.println(this + " moves to " + newLoc);
+
     }
 
     public String toString(){
