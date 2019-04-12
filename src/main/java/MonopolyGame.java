@@ -1,5 +1,8 @@
 public class MonopolyGame {
-    public final static int nbRound = 20;
+    public final static int NB_ROUND = 20;
+    public final static int NB_DICE = 2;
+    public final static int NB_PLAYER_MIN = 2;
+    public final static int NB_PLAYER_MAX = 8;
     private Board gameBoard;
     private Die[] gameDices;
     private int roundCnt;
@@ -7,7 +10,7 @@ public class MonopolyGame {
 
 
     public void playGame() {
-        for (int i = 0; i < nbRound; i++) {
+        for (int i = 0; i < NB_ROUND; i++) {
             playRound();
         }
     }
@@ -17,14 +20,14 @@ public class MonopolyGame {
     }
 
     public MonopolyGame(int nbPlayer) throws Exception {
-        if (nbPlayer < 2 || nbPlayer > 8) {
-            throw new Exception("Choose between 2-8 players");
+        if (nbPlayer < NB_PLAYER_MIN || nbPlayer > NB_PLAYER_MAX) {
+            throw new Exception("Choose between "+ NB_PLAYER_MIN+"-" + NB_PLAYER_MAX +" players");
         }
 
         gameBoard = new Board();
-        gameDices = new Die[2];
+        gameDices = new Die[NB_DICE];
 
-        for(int i = 0; i < 2; i++){
+        for(int i = 0; i < NB_DICE; i++){
             gameDices[i] = new Die();
         }
         roundCnt = 0;

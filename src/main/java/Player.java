@@ -10,7 +10,7 @@ public class Player {
         this.dice = dice;
         this.name = name;
 
-        this.playerPiece = new Piece(name, this.board.getAllSquares()[0]);
+        this.playerPiece = new Piece(name, this.board.getAllSquares()[Board.GO_SQUARE]);
     }
 
     public void takeTurn() {
