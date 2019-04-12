@@ -8,7 +8,8 @@ public class Die {
         this.roll();
     }
     private int faceValue;
-    public void roll(){
+
+    public void roll() {
         Random r = new Random();
         this.faceValue = r.nextInt(MAX) + MIN;
     }

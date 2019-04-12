@@ -23,6 +23,7 @@ public class MonopolyGame {
 
         gameBoard = new Board();
         gameDices = new Die[2];
+
         for(int i = 0; i < 2; i++){
             gameDices[i] = new Die();
         }
@@ -30,7 +31,7 @@ public class MonopolyGame {
 
         gamePlayers = new Player[nbPlayer];
         for(int i = 0; i < gamePlayers.length; i++){
-            gamePlayers[i] = new Player(gameBoard.getAllSquares()[0], "Player"+i);
+            gamePlayers[i] = new Player(gameBoard, gameDices, "Player"+i);
         }
     }
 
@@ -38,7 +39,7 @@ public class MonopolyGame {
         roundCnt++;
         for (Player p:
              gamePlayers) {
-            p.takeTurn(gameDices, gameBoard);
+            p.takeTurn();
         }
     }
 }
