@@ -27,7 +27,12 @@ public class Player {
         Square oldLoc = playerPiece.getLocation();
 
         /* Display player and new location */
-        Square newLoc = board.getSquare(oldLoc, fvTot);
+        Square newLoc = null;
+        try {
+            newLoc = board.getSquare(oldLoc, fvTot);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         playerPiece.setLocation(newLoc);
         System.out.println(this + " moves to " + newLoc);
 

@@ -19,11 +19,24 @@ public class Board {
         return allSquares.clone();
     }
 
-    public Square getSquare(Square location, int offset){
+    public Square getSquare(Square location, int offset) throws Exception{
+        if(offset <= -Board.NB_SQUARE || offset >= Board.NB_SQUARE){
+            throw new Exception("Offset must be between " + (-Board.NB_SQUARE) +
+                    "-"+Board.NB_SQUARE);
+        }
+
+
         Square result = new Square("Error");
         for(int i = 0; i < NB_SQUARE; i++){
             if(allSquares[i] == location){
-                result = allSquares[(i+offset) % NB_SQUARE];
+
+                int tmp = i+offset;
+
+                if(tmp < 0){
+                    tmp += Board.NB_SQUARE;
+                }
+
+                result = allSquares[tmp % NB_SQUARE];
                 break;
             }
         }
