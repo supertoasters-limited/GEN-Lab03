@@ -15,10 +15,6 @@ public class Board {
         }
     }
 
-    public Square[] getAllSquares() {
-        return allSquares.clone();
-    }
-
     public Square getSquare(Square location, int offset) throws Exception{
         if(offset <= -Board.NB_SQUARE || offset >= Board.NB_SQUARE){
             throw new Exception("Offset must be between " + (-Board.NB_SQUARE) +
