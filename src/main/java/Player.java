@@ -1,16 +1,16 @@
 public class Player {
 
+    private Board board;
+    private Die[] dice;
     private String name;
     private Piece playerPiece;
-    private Die[] dice;
-    private Board board;
 
     public Player(Board board, Die[] dice, String name) {
         this.board = board;
         this.dice = dice;
         this.name = name;
-
         this.playerPiece = new Piece(name, this.board.getAllSquares()[Board.GO_SQUARE]);
+
     }
 
     public void takeTurn() {
@@ -35,10 +35,29 @@ public class Player {
         }
         playerPiece.setLocation(newLoc);
         System.out.println(this + " moves to " + newLoc);
-
     }
 
-    public String toString(){
+    public String toString() {
+        return name;
+    }
+
+    /* Needed for the tests */
+    public Die[] getDice() {
+        return dice;
+    }
+
+    /* Needed for the tests */
+    public Board getBoard() {
+        return board;
+    }
+
+    /* Needed for the tests */
+    public Piece getPlayerPiece() {
+        return playerPiece;
+    }
+
+    /* Needed for the tests */
+    public String getName() {
         return name;
     }
 }

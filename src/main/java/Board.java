@@ -25,7 +25,6 @@ public class Board {
                     "-"+Board.NB_SQUARE);
         }
 
-
         Square result = new Square("Error");
         for(int i = 0; i < NB_SQUARE; i++){
             if(allSquares[i] == location){
@@ -41,5 +40,9 @@ public class Board {
             }
         }
         return result;
+    }
+
+    public Square[] getAllSquares() {
+        return allSquares.clone();
     }
 }
