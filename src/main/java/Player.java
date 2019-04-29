@@ -5,6 +5,8 @@ public class Player {
     private String name;
     private Piece playerPiece;
 
+    private Double cash = 1500.0;
+
     public Player(Board board, Die[] dice, String name) {
         this.board = board;
         this.dice = dice;
@@ -29,7 +31,9 @@ public class Player {
         /* Display player and new location */
         Square newLoc = board.getSquare(oldLoc, fvTot);
         playerPiece.setLocation(newLoc);
-        System.out.println(this + " moves to " + newLoc);
+        newLoc.landedOn(this);
+        System.out.println(this + " moves to " + newLoc + " and has now : " + this.getNetWorth());
+
     }
 
     public String toString() {
@@ -54,5 +58,17 @@ public class Player {
     /* Needed for the tests */
     public String getName() {
         return name;
+    }
+
+    public Double getNetWorth() {
+        return cash;
+    }
+    
+    public void addCash(Double cash){
+        this.cash += cash;
+    }
+
+    public void reduceCash(Double cash){
+        this.cash -= cash;
     }
 }
