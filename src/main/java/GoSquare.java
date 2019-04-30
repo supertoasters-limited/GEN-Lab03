@@ -6,5 +6,6 @@ public class GoSquare extends Square {
 
     public void landedOn(Player p){
         p.addCash(200.0);
+        p.setLocation(this);
     }
 }
