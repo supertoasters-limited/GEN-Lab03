@@ -19,13 +19,13 @@ public class PlayerTest {
         assertEquals(superman.getBoard(), board);
     }
 
-/*    @Test
+    @Test
     public void thePlayerShouldHaveTwoDice() {
         Die[] dice = new Die[2];
         Player ironman = new Player(new Board(), dice, "Iron Man");
 
         assertArrayEquals(dice, ironman.getDice());
-    }*/
+    }
 
     @Test
     public void thePlayerShouldHaveAStartingLocation() {
@@ -34,7 +34,7 @@ public class PlayerTest {
         assertNotNull(antman.getPlayerPiece());
     }
 
-/*    @Test
+    @Test
     public void thePlayerShouldPlayHisTurnCorrectly() {
 
         Die yin = new Die();
@@ -47,7 +47,7 @@ public class PlayerTest {
         Square oldLoc = batman.getPlayerPiece().getLocation();
         batman.takeTurn();
 
-        *//* Retrieve dice values and new location *//*
+        /* Retrieve dice values and new location */
         int fv = 0;
         for (int i = 0; i < batman.getDice().length; ++i) {
             fv += batman.getDice()[i].getFaceValue();
@@ -55,8 +55,5 @@ public class PlayerTest {
         Square newLoc = batman.getPlayerPiece().getLocation();
 
         assertEquals(newLoc, board.getSquare(oldLoc, fv));
-    }*/
-
-
-
+    }
 }
