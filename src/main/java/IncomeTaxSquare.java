@@ -7,7 +7,7 @@ public class IncomeTaxSquare extends Square {
     }
 
     public void landedOn(Player p){
-        Double w = p.getNetWorth();
-        p.reduceCash(min(0.1 * w, 200));
+        int w = p.getNetWorth();
+        p.reduceCash(min(Math.floor(0.1 * w), 200));
     }
 }

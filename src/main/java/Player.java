@@ -1,27 +1,26 @@
 public class Player {
 
     private Board board;
-    private Die[] dice;
     private String name;
     private Piece playerPiece;
-    private Double cash = 1500.0;
+    private int cash = 1500;
+    private Die[] dice;
+    private Cup cup;
 
     public Player(Board board, Die[] dice, String name) {
         this.board = board;
-        this.dice = dice;
         this.name = name;
+        this.dice = dice;
+        this.cup = new Cup(this.dice);
         this.playerPiece = new Piece(name, this.board.getAllSquares()[Board.GO_SQUARE]);
-
     }
 
     public void takeTurn() {
         int fvTot = 0;
 
         /* Roll the dice and save the result */
-        for(int i = 0; i < dice.length; i++){
-            dice[i].roll();
-            fvTot += dice[i].getFaceValue();
-        }
+        this.cup.roll();
+        fvTot = this.cup.getTotal();
 
         /* Display player and roll value */
         System.out.println(this + " rolled " + fvTot);
@@ -29,7 +28,7 @@ public class Player {
 
         /* Display player and new location */
         Square newLoc = board.getSquare(oldLoc, fvTot);
-        playerPiece.setLocation(newLoc);
+        this.setLocation(newLoc);
         newLoc.landedOn(this);
         System.out.println(this + " moves to " + newLoc + " and has now : " + this.getNetWorth());
 
@@ -37,11 +36,6 @@ public class Player {
 
     public String toString() {
         return name;
-    }
-
-    /* Needed for the tests */
-    public Die[] getDice() {
-        return dice;
     }
 
     /* Needed for the tests */
@@ -59,7 +53,7 @@ public class Player {
         return name;
     }
 
-    public Double getNetWorth() {
+    public int getNetWorth() {
         return cash;
     }
     
@@ -67,8 +61,12 @@ public class Player {
         this.cash += cash;
     }
 
-    public void reduceCash(Double cash){
+    public void reduceCash(Double cash) {
         this.cash -= cash;
+
+        if (this.cash < 0) {
+            this.cash = 0;
+        }
     }
 
     public void setLocation(Square location) {
