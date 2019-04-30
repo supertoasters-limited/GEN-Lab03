@@ -1,12 +1,18 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Cup {
 
-    private List<Die> dice;
+    private List<Die> dice = new ArrayList<>();
 
     public Cup(Die[] dice) {
         this.dice = Arrays.asList(dice);
+    }
+
+    /* Needed for the tests */
+    public Cup(Die die) {
+        this.dice.add(die);
     }
 
     public void roll() {
@@ -23,5 +29,10 @@ public class Cup {
         }
 
         return total;
+    }
+
+    /* Needed for the tests */
+    public List<Die> getDice() {
+        return this.dice;
     }
 }
