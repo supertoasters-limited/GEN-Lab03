@@ -11,7 +11,7 @@ public class MonopolyGame {
 
 
 
-    public void playGame() {
+    public void playGame() throws Exception {
         for (int i = 0; i < NB_ROUND; i++) {
             playRound();
         }
@@ -41,7 +41,7 @@ public class MonopolyGame {
         }
     }
 
-    public void playRound() {
+    public void playRound() throws Exception {
         roundCnt++;
         for (Player p : gamePlayers) {
             p.takeTurn();
