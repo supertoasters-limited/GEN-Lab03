@@ -38,21 +38,6 @@ public class Player {
         return name;
     }
 
-    /* Needed for the tests */
-    public Board getBoard() {
-        return board;
-    }
-
-    /* Needed for the tests */
-    public Piece getPlayerPiece() {
-        return playerPiece;
-    }
-
-    /* Needed for the tests */
-    public String getName() {
-        return name;
-    }
-
     public int getNetWorth() {
         return cash;
     }
@@ -71,5 +56,25 @@ public class Player {
 
     public void setLocation(Square location) {
         this.playerPiece.setLocation(location);
+    }
+
+    /* Needed for the tests */
+    public Board getBoard() {
+        return board;
+    }
+
+    /* Needed for the tests */
+    public Piece getPlayerPiece() {
+        return playerPiece;
+    }
+
+    /* Needed for the tests */
+    public String getName() {
+        return name;
+    }
+
+    /* Needed for the tests */
+    public Die[] getDice() {
+        return dice;
     }
 }
