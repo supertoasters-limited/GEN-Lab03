@@ -28,7 +28,6 @@ public class Player {
 
         /* Display player and new location */
         Square newLoc = board.getSquare(oldLoc, fvTot);
-        this.setLocation(newLoc);
         newLoc.landedOn(this);
         System.out.println(this + " moves to " + newLoc + " and has now : " + this.getNetWorth());
 
