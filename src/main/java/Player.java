@@ -4,7 +4,6 @@ public class Player {
     private Die[] dice;
     private String name;
     private Piece playerPiece;
-
     private Double cash = 1500.0;
 
     public Player(Board board, Die[] dice, String name) {
@@ -70,5 +69,9 @@ public class Player {
 
     public void reduceCash(Double cash){
         this.cash -= cash;
+    }
+
+    public void setLocation(Square location) {
+        this.playerPiece.setLocation(location);
     }
 }
