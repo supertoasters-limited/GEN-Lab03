@@ -15,7 +15,7 @@ public class Player {
         this.playerPiece = new Piece(name, this.board.getAllSquares()[Board.GO_SQUARE]);
     }
 
-    public void takeTurn() {
+    public void takeTurn() throws Exception {
         int fvTot = 0;
 
         /* Roll the dice and save the result */
