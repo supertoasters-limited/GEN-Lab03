@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class IncomeTaxSquareTest {
+public class GoToJailTest {
 
     private Board board;
     private Player player;
@@ -21,7 +21,7 @@ public class IncomeTaxSquareTest {
             gameDices[i] = new Die();
         }
 
-        this.player = new Player(this.board, this.gameDices, "Pierre-Philipe");
+        this.player = new Player(this.board, this.gameDices, "René");
         this.allSquare = board.getAllSquares();
     }
 
@@ -52,16 +52,11 @@ public class IncomeTaxSquareTest {
 
 
     @Test
-    public void playerShouldBeIncomeTaxedWhenLandedOnIncomeTaxSquare() throws Exception {
-        // player on Go square
-        int amountBeforeGo = player.getNetWorth();
-        int amountIncomeTaxed = amountBeforeGo - (int) Math.floor(amountBeforeGo * 0.1);
-
-        // player on squre 4
-        Square newLoc = board.getSquare(player.getPlayerPiece().getLocation(), Board.INCOME_TAX);
+    public void playerShouldBeTeleportedToJailWhenLandingOnGoToJailSquare() throws Exception {
+        // player on square 30
+        Square newLoc = board.getSquare(player.getPlayerPiece().getLocation(), Board.GO_TO_JAIL);
         newLoc.landedOn(player);
 
-
-         assertTrue(amountIncomeTaxed == player.getNetWorth());
+         assertEquals(this.player.getPlayerPiece().getLocation(), this.allSquare[Board.JAIL]);
     }
 }
