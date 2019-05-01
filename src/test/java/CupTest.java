@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CupTest {
 
+
     @Test
     public void aCupShouldRollTheDiceInIt() {
         Die die = new Die();
@@ -29,7 +30,7 @@ public class CupTest {
 
         total = cup.getTotal();
 
-        assertNotNull(total);
+        assertFalse(total == 0);
 
     }
 }
