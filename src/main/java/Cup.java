@@ -16,7 +16,7 @@ public class Cup {
     }
 
     public void roll() {
-        for (Die die : dice) {
+        for (Die die : this.dice) {
             die.roll();
         }
     }
@@ -24,15 +24,10 @@ public class Cup {
     public int getTotal() {
         int total = 0;
 
-        for (Die die : dice) {
+        for (Die die : this.dice) {
             total += die.getFaceValue();
         }
 
         return total;
-    }
-
-    /* Needed for the tests */
-    public List<Die> getDice() {
-        return this.dice;
     }
 }

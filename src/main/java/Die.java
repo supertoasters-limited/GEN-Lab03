@@ -2,11 +2,11 @@ import java.util.Random;
 
 public class Die {
 
-    static final int MIN = 1;
-    static final int MAX = 6;
+    public static final int MIN = 1;
+    public static final int MAX = 6;
     private int faceValue;
 
-    Die() {
+    public Die() {
         this.roll();
     }
 
@@ -16,6 +16,6 @@ public class Die {
     }
 
     public int getFaceValue() {
-        return faceValue;
+        return this.faceValue;
     }
 }

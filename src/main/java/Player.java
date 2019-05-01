@@ -10,9 +10,9 @@ public class Player {
     public Player(Board board, Die[] dice, String name) {
         this.board = board;
         this.name = name;
+        this.playerPiece = new Piece(name, this.board.getAllSquares()[Board.GO_SQUARE]);
         this.dice = dice;
         this.cup = new Cup(this.dice);
-        this.playerPiece = new Piece(name, this.board.getAllSquares()[Board.GO_SQUARE]);
     }
 
     public void takeTurn() throws Exception {
@@ -24,21 +24,21 @@ public class Player {
 
         /* Display player and roll value */
         System.out.println(this + " rolled " + fvTot);
-        Square oldLoc = playerPiece.getLocation();
+        Square oldLoc = this.playerPiece.getLocation();
 
         /* Display player and new location */
-        Square newLoc = board.getSquare(oldLoc, fvTot);
+        Square newLoc = this.board.getSquare(oldLoc, fvTot);
         newLoc.landedOn(this);
         System.out.println(this + " moves to " + newLoc + " and has now : " + this.getNetWorth());
 
     }
 
     public String toString() {
-        return name;
+        return this.name;
     }
 
     public int getNetWorth() {
-        return cash;
+        return this.cash;
     }
     
     public void addCash(Double cash){
@@ -59,21 +59,21 @@ public class Player {
 
     /* Needed for the tests */
     public Board getBoard() {
-        return board;
+        return this.board;
     }
 
     /* Needed for the tests */
     public Piece getPlayerPiece() {
-        return playerPiece;
+        return this.playerPiece;
     }
 
     /* Needed for the tests */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /* Needed for the tests */
     public Die[] getDice() {
-        return dice;
+        return this.dice;
     }
 }
