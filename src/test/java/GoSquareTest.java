@@ -58,11 +58,11 @@ public class GoSquareTest {
         // player on Go square
         int amountBeforeGo = player.getNetWorth();
 
-        // player on squre 25
+        // player on square 25
         Square newLoc = board.getSquare(player.getPlayerPiece().getLocation(), 25);
         newLoc.landedOn(player);
 
-        // player on Go square (+ 1 tour)
+        // player on Go square (+ 1 round)
         newLoc = board.getSquare(player.getPlayerPiece().getLocation(), 15);
         newLoc.landedOn(player);
 

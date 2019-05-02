@@ -57,6 +57,6 @@ public class GoToJailTest {
         Square newLoc = board.getSquare(player.getPlayerPiece().getLocation(), Board.GO_TO_JAIL);
         newLoc.landedOn(player);
 
-         assertEquals(this.player.getPlayerPiece().getLocation(), this.allSquare[Board.JAIL]);
+        assertEquals(this.player.getPlayerPiece().getLocation(), this.allSquare[Board.JAIL]);
     }
 }

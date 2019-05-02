@@ -57,11 +57,11 @@ public class IncomeTaxSquareTest {
         int amountBeforeGo = player.getNetWorth();
         int amountIncomeTaxed = amountBeforeGo - (int) Math.floor(amountBeforeGo * 0.1);
 
-        // player on squre 4
+        // player on square 4
         Square newLoc = board.getSquare(player.getPlayerPiece().getLocation(), Board.INCOME_TAX);
         newLoc.landedOn(player);
 
 
-         assertTrue(amountIncomeTaxed == player.getNetWorth());
+        assertTrue(amountIncomeTaxed == player.getNetWorth());
     }
 }

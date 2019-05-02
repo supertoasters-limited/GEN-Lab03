@@ -76,4 +76,8 @@ public class Player {
     public Die[] getDice() {
         return this.dice;
     }
+
+    /* Needed for the tests */
+    public void setCash(int newAmount) { this.cash = newAmount; }
+
 }
