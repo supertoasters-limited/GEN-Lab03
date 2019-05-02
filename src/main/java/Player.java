@@ -41,11 +41,11 @@ public class Player {
         return this.cash;
     }
     
-    public void addCash(Double cash){
+    public void addCash(int cash){
         this.cash += cash;
     }
 
-    public void reduceCash(Double cash) {
+    public void reduceCash(int cash) {
         this.cash -= cash;
 
         if (this.cash < 0) {
