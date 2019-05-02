@@ -37,7 +37,7 @@ public class Board {
         }
 
         Square result = new RegularSquare("Error");
-        
+
         for (int i = 0; i < NB_SQUARE; i++) {
             if (this.allSquares[i] == location) {
 
