@@ -1,3 +1,6 @@
+/*
+ * Starting point of the program
+ */
 public class Simulation {
 
     public static void main(String[] args) {
@@ -6,6 +9,7 @@ public class Simulation {
         try {
             MonopolyGame currentGame = new MonopolyGame(NB_PLAYER);
             currentGame.playGame();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,4 +1,5 @@
 public class MonopolyGame {
+
     public final static int NB_ROUND = 20;
     public final static int NB_DICE = 2;
     public final static int NB_PLAYER_MIN = 2;
@@ -6,19 +7,18 @@ public class MonopolyGame {
 
     private Board gameBoard;
     private Die[] gameDices;
-    private int roundCnt;
     private Player[] gamePlayers;
 
-
-
-    public void playGame() {
+    public void playGame() throws Exception {
         for (int i = 0; i < NB_ROUND; i++) {
+            System.out.println("ROUND " + i);
             playRound();
+            System.out.println();
         }
     }
 
     public Board getGameBoard() {
-        return gameBoard;
+        return this.gameBoard;
     }
 
     public MonopolyGame(int nbPlayer) throws Exception {
@@ -26,24 +26,22 @@ public class MonopolyGame {
             throw new Exception("Choose between "+ NB_PLAYER_MIN+"-" + NB_PLAYER_MAX +" players");
         }
 
-        gameBoard = new Board();
-        gameDices = new Die[NB_DICE];
+        this.gameBoard = new Board();
+        this.gameDices = new Die[NB_DICE];
 
 
         for(int i = 0; i < NB_DICE; i++){
-            gameDices[i] = new Die();
+            this.gameDices[i] = new Die();
         }
-        roundCnt = 0;
 
-        gamePlayers = new Player[nbPlayer];
-        for (int i = 0; i < gamePlayers.length; i++) {
-            gamePlayers[i] = new Player(gameBoard, gameDices, "Player" + i);
+        this.gamePlayers = new Player[nbPlayer];
+        for (int i = 0; i < this.gamePlayers.length; ++i) {
+            this.gamePlayers[i] = new Player(this.gameBoard, this.gameDices, "Player" + i);
         }
     }
 
-    public void playRound() {
-        roundCnt++;
-        for (Player p : gamePlayers) {
+    private void playRound() throws Exception {
+        for (Player p : this.gamePlayers) {
             p.takeTurn();
         }
     }

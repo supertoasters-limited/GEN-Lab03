@@ -35,7 +35,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void thePlayerShouldPlayHisTurnCorrectly() {
+    public void thePlayerShouldPlayHisTurnCorrectly() throws Exception {
 
         Die yin = new Die();
         Die yang = new Die();
@@ -56,7 +56,4 @@ public class PlayerTest {
 
         assertEquals(newLoc, board.getSquare(oldLoc, fv));
     }
-
-
-
 }
