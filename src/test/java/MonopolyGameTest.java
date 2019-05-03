@@ -9,9 +9,7 @@ public class MonopolyGameTest {
     @ParameterizedTest
     @ValueSource(ints = {-1, 0, Integer.MIN_VALUE, 1})
     void theGameShouldntBePlayableByLessThanTwoPlayers(int value) {
-        Exception thrown =
-                assertThrows(Exception.class, () -> new MonopolyGame(value));
-
+        assertThrows(Exception.class, () -> new MonopolyGame(value));
     }
 
     @ParameterizedTest
@@ -27,8 +25,6 @@ public class MonopolyGameTest {
     @ParameterizedTest
     @ValueSource(ints = {99, 100, 9, Integer.MAX_VALUE})
     void theGameShouldntBePlayableByMoreThanTwoPlayers(int value) {
-        Exception thrown =
-                assertThrows(Exception.class, () -> new MonopolyGame(value));
-
+        assertThrows(Exception.class, () -> new MonopolyGame(value));
     }
 }

@@ -32,7 +32,7 @@ public class CupTest {
 
         total = cup.getTotal();
 
-        assertFalse(total == 0);
+        assertNotEquals(0, total);
 
     }
 }

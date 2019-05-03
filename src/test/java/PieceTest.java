@@ -4,30 +4,30 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PieceTest {
 
+    private Piece piece;
+    private Square location;
+
+    @BeforeEach
+    void init() {
+        this.location = new RegularSquare("Bank");
+        this.piece = new Piece("Pion", this.location);
+    }
+
     @Test
     void weShouldBeAbleToGetAPieceLocation() {
-        Square jail = new RegularSquare("Jail");
-        Piece red = new Piece("Red", jail);
-
-        assertEquals(red.getName(), "Red");
-        assertEquals(red.getLocation().getName(), "Jail");
-
-        Square bank = new RegularSquare("Bank");
-        red.setName("Pink");
-        red.setLocation(bank);
-
-        assertEquals(red.getName(), "Pink");
-        assertEquals(red.getLocation().getName(), "Bank");
+        assertEquals(this.piece.getLocation(), this.location);
     }
 
     @Test
     void weShouldBeAbleToSetAPieceLocation() {
+        Square supermarket = new RegularSquare("Supermarket");
+        this.piece.setLocation(supermarket);
 
+        assertEquals(this.piece.getLocation(), supermarket);
     }
 
-    // name ?
     @Test
-    void weShouldBeAbleToSetAPieceName() {
-
+    void aPlayerShouldHaveTheRightName() {
+        assertEquals(this.piece.getName(), "Pion");
     }
 }

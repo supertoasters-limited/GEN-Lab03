@@ -16,7 +16,7 @@ public class Player {
     }
 
     public void takeTurn() throws Exception {
-        int fvTot = 0;
+        int fvTot;
 
         /* Roll the dice and save the result */
         this.cup.roll();
