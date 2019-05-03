@@ -17,10 +17,6 @@ public class MonopolyGame {
         }
     }
 
-    public Board getGameBoard() {
-        return this.gameBoard;
-    }
-
     public MonopolyGame(int nbPlayer) throws Exception {
         if (nbPlayer < NB_PLAYER_MIN || nbPlayer > NB_PLAYER_MAX) {
             throw new Exception("Choose between "+ NB_PLAYER_MIN+"-" + NB_PLAYER_MAX +" players");

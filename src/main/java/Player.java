@@ -16,7 +16,7 @@ public class Player {
     }
 
     public void takeTurn() throws Exception {
-        int fvTot = 0;
+        int fvTot;
 
         /* Roll the dice and save the result */
         this.cup.roll();
@@ -76,4 +76,8 @@ public class Player {
     public Die[] getDice() {
         return this.dice;
     }
+
+    /* Needed for the tests */
+    public void setCash(int newAmount) { this.cash = newAmount; }
+
 }
