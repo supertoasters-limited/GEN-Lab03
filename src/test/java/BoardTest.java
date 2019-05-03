@@ -10,8 +10,6 @@ public class BoardTest {
     private Board board;
     private Square[] allSquare;
 
-
-
     @BeforeEach
     public void init(){
         this.board = new Board();
@@ -23,7 +21,6 @@ public class BoardTest {
         assertNotNull(this.board);
     }
 
-
     @Test
     public void aBoardShouldInitialiseAllItsSquare(){
         assertNotNull(this.allSquare);
@@ -33,12 +30,10 @@ public class BoardTest {
         }
     }
 
-
     @Test
     public void allSquareShouldHaveCorrectSize(){
         assertEquals(this.allSquare.length, Board.NB_SQUARE);
     }
-
 
     @Test
     public void GoSquareBoardShouldHaveCorrectName(){
@@ -64,7 +59,6 @@ public class BoardTest {
         assertEquals(this.allSquare[Board.GO_TO_JAIL].getName(), goSquareName);
     }
 
-
     @Test
     public void OtherSquareBoardShouldHaveCorrectName(){
         String squareName = "Square ";
@@ -75,8 +69,6 @@ public class BoardTest {
 
         }
     }
-
-
 
     @ParameterizedTest
     @ValueSource(ints = {3, 5, 10, 39})
@@ -92,9 +84,7 @@ public class BoardTest {
 
 
         assertEquals(square,this.allSquare[value % Board.NB_SQUARE]);
-
     }
-
 
     @ParameterizedTest
     @ValueSource(ints = {-3, -5, -10, -39})
@@ -112,22 +102,16 @@ public class BoardTest {
         value +=  Board.NB_SQUARE;
 
         assertEquals(square,this.allSquare[value]);
-
     }
-
-
 
     @ParameterizedTest
     @ValueSource(ints = {Integer.MIN_VALUE, -80, 78, Integer.MAX_VALUE})
-    public void getSquareShouldGiveCorrespondingSquareWithExtremValue(int value){
+    public void getSquareShouldGiveCorrespondingSquareWithExtremeValue(int value){
 
         final Square square = this.allSquare[Board.GO_SQUARE];
 
-
         Exception thrown =
-                assertThrows(Exception.class, ()->{
-                    board.getSquare(square, value);
-                });
+                assertThrows(Exception.class, ()-> board.getSquare(square, value));
 
         assertTrue(thrown.getMessage().contains("Offset must be between " + (-Board.NB_SQUARE) +
                 "-"+Board.NB_SQUARE));

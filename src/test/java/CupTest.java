@@ -11,6 +11,8 @@ public class CupTest {
         Cup cup = new Cup(die);
         int value = die.getFaceValue();
 
+        /* Since we would like to prove that dice are rolled,
+        new face value should differ from the first face value. */
         while(value == die.getFaceValue()) {
             cup.roll();
         }
@@ -30,7 +32,7 @@ public class CupTest {
 
         total = cup.getTotal();
 
-        assertFalse(total == 0);
+        assertNotEquals(0, total);
 
     }
 }

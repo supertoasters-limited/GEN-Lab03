@@ -8,19 +8,16 @@ public class Piece {
         this.location = location;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Square getLocation() {
         return this.location;
     }
 
     public void setLocation(Square newLocation) {
         this.location = newLocation;
+    }
+
+    /* Needed for the tests */
+    public String getName() {
+        return this.name;
     }
 }
