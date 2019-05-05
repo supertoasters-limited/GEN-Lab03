@@ -29,7 +29,7 @@ public class Player {
         /* Display player and new location */
         Square newLoc = this.board.getSquare(oldLoc, fvTot);
         newLoc.landedOn(this);
-        System.out.println(this + " moves to " + newLoc + " and has now : " + this.getNetWorth());
+        System.out.println(this + " moves to " + newLoc + " and has now : " + this.getNetWorth() + " $");
 
     }
 
@@ -40,8 +40,8 @@ public class Player {
     public int getNetWorth() {
         return this.cash;
     }
-    
-    public void addCash(int cash){
+
+    public void addCash(int cash) {
         this.cash += cash;
     }
 
@@ -78,6 +78,8 @@ public class Player {
     }
 
     /* Needed for the tests */
-    public void setCash(int newAmount) { this.cash = newAmount; }
+    public void setCash(int newAmount) {
+        this.cash = newAmount;
+    }
 
 }

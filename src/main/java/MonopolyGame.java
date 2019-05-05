@@ -11,7 +11,7 @@ public class MonopolyGame {
 
     public void playGame() throws Exception {
         for (int i = 0; i < NB_ROUND; i++) {
-            System.out.println("ROUND " + i);
+            System.out.println("ROUND " + (i + 1));
             playRound();
             System.out.println();
         }
@@ -19,14 +19,14 @@ public class MonopolyGame {
 
     public MonopolyGame(int nbPlayer) throws Exception {
         if (nbPlayer < NB_PLAYER_MIN || nbPlayer > NB_PLAYER_MAX) {
-            throw new Exception("Choose between "+ NB_PLAYER_MIN+"-" + NB_PLAYER_MAX +" players");
+            throw new Exception("Choose between " + NB_PLAYER_MIN + "-" + NB_PLAYER_MAX + " players");
         }
 
         this.gameBoard = new Board();
         this.gameDices = new Die[NB_DICE];
 
 
-        for(int i = 0; i < NB_DICE; i++){
+        for (int i = 0; i < NB_DICE; i++) {
             this.gameDices[i] = new Die();
         }
 

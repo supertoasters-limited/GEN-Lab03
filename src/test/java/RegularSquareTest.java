@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class SquareTest {
+public class RegularSquareTest {
     @Test
     public void aSquareShouldhaveAName(){
         String squareName = "ASuperSquare";

@@ -4,7 +4,7 @@ public class RegularSquare extends Square {
         super(name);
     }
 
-    public void landedOn(Player p){
+    public void landedOn(Player p) {
         p.setLocation(this);
     }
 }
